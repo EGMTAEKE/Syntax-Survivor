@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://ct7yvvbvhsnur"]
+
+[ext_resource type="Script" uid="uid://dxtgqnqeev48n" path="res://scripts/ability.gd" id="1_1f51p"]
+
+[resource]
+script = ExtResource("1_1f51p")
+id = "healthBonus"
+name = "Выживаемость"
+description = "Жырный как после БК"
+healthBonus = 100
+metadata/_custom_type_script = "uid://dxtgqnqeev48n"

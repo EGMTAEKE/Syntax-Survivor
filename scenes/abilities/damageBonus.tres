@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://cdxv5usyxs7pr"]
+
+[ext_resource type="Script" uid="uid://dxtgqnqeev48n" path="res://scripts/ability.gd" id="1_feyxm"]
+
+[resource]
+script = ExtResource("1_feyxm")
+id = "damageBonus"
+name = "Урон"
+description = "Много урона по владу сопаву"
+damageBonus = 0.2
+metadata/_custom_type_script = "uid://dxtgqnqeev48n"

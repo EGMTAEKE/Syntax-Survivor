@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://drg3d3n77ddrk"]
+
+[ext_resource type="Script" uid="uid://cd1s0cbf8jtp6" path="res://scenes/menu/button_start.gd" id="1_klgdb"]
+[ext_resource type="Script" uid="uid://dsxee67ffnh2t" path="res://scenes/menu/menu.gd" id="1_mcvr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_klgdb"]
+size = Vector2(250, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcvr8"]
+size = Vector2(250, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0arn"]
+size = Vector2(250, 80)
+
+[node name="menu" type="Control" unique_id=161874008]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mcvr8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2002121852]
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer" unique_id=176282504]
+offset_right = 540.0
+offset_bottom = 960.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer" unique_id=2068883631]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Control" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1480817363]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Start" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/Control" unique_id=292099967]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+text = "Начать"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1193057531]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Settings" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/Control2" unique_id=218887437]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+text = "Настройки"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control3" type="Control" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=427960423]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Exit" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer/Control3" unique_id=110488596]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+text = "Выйти"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonStart" type="TouchScreenButton" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=1851227644]
+position = Vector2(130, 40)
+shape = SubResource("RectangleShape2D_klgdb")
+script = ExtResource("1_klgdb")
+
+[node name="ButtonSettings" type="TouchScreenButton" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=2044696698]
+position = Vector2(130, 150)
+shape = SubResource("RectangleShape2D_mcvr8")
+
+[node name="ButtonExit" type="TouchScreenButton" parent="CanvasLayer/CenterContainer/VBoxContainer" unique_id=123678518]
+position = Vector2(130, 260)
+shape = SubResource("RectangleShape2D_e0arn")
+
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ButtonStart" to="CanvasLayer/CenterContainer/VBoxContainer/ButtonStart" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://do7l77pora13f"]
+
+[ext_resource type="Texture2D" uid="uid://bnchqrkakh2sc" path="res://scenes/level/tileMap5.png" id="1_h3e3j"]
+[ext_resource type="Script" uid="uid://dqntxjdm7nscx" path="res://scenes/level/level.gd" id="1_wcngd"]
+[ext_resource type="PackedScene" uid="uid://bsnww4gxvxewt" path="res://scenes/player/player.tscn" id="2_nbgty"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="3_i166f"]
+[ext_resource type="Texture2D" uid="uid://cwa66ngwk56hw" path="res://scenes/level/Base Texture.png" id="4_hnne4"]
+[ext_resource type="Texture2D" uid="uid://chwf13nf0lo42" path="res://scenes/level/Tip Texture.png" id="5_vpf64"]
+[ext_resource type="PackedScene" uid="uid://iunc52ys8rji" path="res://scenes/enemy/error_enemy.tscn" id="6_vpf64"]
+[ext_resource type="Script" uid="uid://cil3tnrcyg7ej" path="res://scenes/level/pool_enemy.gd" id="7_sytrn"]
+[ext_resource type="Script" uid="uid://c0tsxyp0gdtey" path="res://scenes/level/wave.gd" id="9_tf2q7"]
+
+[node name="level" type="Node2D" unique_id=1541133224]
+script = ExtResource("1_wcngd")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1349509648]
+repeat_size = Vector2(481, 481)
+repeat_times = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=277321808]
+position = Vector2(-238, -4)
+texture = ExtResource("1_h3e3j")
+
+[node name="player" parent="." unique_id=396867853 groups=["players"] instance=ExtResource("2_nbgty")]
+position = Vector2(0, -14)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=175411609]
+
+[node name="Virtual Joystick" parent="CanvasLayer" unique_id=1402869439 instance=ExtResource("3_i166f")]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 0.47058824)
+offset_top = -955.0
+offset_right = 1080.0
+offset_bottom = 955.0
+scale = Vector2(0.5, 0.5)
+clampzone_size = 50.0
+joystick_mode = 1
+visibility_mode = 2
+action_left = "LeftMove"
+action_right = "RightMove"
+action_up = "UpMove"
+action_down = "DownMove"
+
+[node name="Base" parent="CanvasLayer/Virtual Joystick" index="0"]
+texture = ExtResource("4_hnne4")
+
+[node name="Tip" parent="CanvasLayer/Virtual Joystick/Base" index="0"]
+texture = ExtResource("5_vpf64")
+
+[node name="poolEnemy" type="Node2D" parent="." unique_id=1765139882]
+script = ExtResource("7_sytrn")
+
+[node name="errorEnemy" parent="poolEnemy" unique_id=421159745 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy2" parent="poolEnemy" unique_id=982098567 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy3" parent="poolEnemy" unique_id=1705242775 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy4" parent="poolEnemy" unique_id=641409765 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy5" parent="poolEnemy" unique_id=1073483968 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy6" parent="poolEnemy" unique_id=1186852931 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy7" parent="poolEnemy" unique_id=1437686767 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy8" parent="poolEnemy" unique_id=1362489195 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy9" parent="poolEnemy" unique_id=1913078066 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="errorEnemy10" parent="poolEnemy" unique_id=147486885 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-500, 0)
+
+[node name="wave" type="Node2D" parent="." unique_id=1957819466]
+script = ExtResource("9_tf2q7")
+
+[node name="Timer" type="Timer" parent="wave" unique_id=1468092994]
+wait_time = 2.0
+
+[connection signal="timeout" from="wave/Timer" to="wave" method="_on_timer_timeout"]
+
+[editable path="CanvasLayer/Virtual Joystick"]

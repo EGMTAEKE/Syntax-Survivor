@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bossdyn3hqxv8"]
+
+[ext_resource type="Script" uid="uid://bcechrn8rmscb" path="res://scenes/cursor/cursor.gd" id="1_tanhk"]
+[ext_resource type="Texture2D" uid="uid://bqrnc8hgso5qi" path="res://scenes/cursor/cursor.png" id="1_v0bn5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tanhk"]
+radius = 6.708204
+
+[node name="cursor" type="Area2D" unique_id=392710476]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_tanhk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1509776596]
+position = Vector2(-1, -1)
+rotation = 1.5707964
+shape = SubResource("CircleShape2D_tanhk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1344491252]
+rotation = 2.0943952
+texture = ExtResource("1_v0bn5")
+
+[node name="TimerDie" type="Timer" parent="." unique_id=1473500975]
+wait_time = 3.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TimerDie" to="." method="_on_timer_die_timeout"]

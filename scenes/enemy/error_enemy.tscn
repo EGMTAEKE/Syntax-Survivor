@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://iunc52ys8rji"]
+
+[ext_resource type="Script" uid="uid://c8eb5j4d0s0ow" path="res://scenes/enemy/error_enemy.gd" id="1_32fbd"]
+[ext_resource type="Texture2D" uid="uid://bino2vq3agtfl" path="res://scenes/enemy/ErrorEnemy.png" id="1_qfesc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_32fbd"]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fwaax"]
+radius = 22.0
+
+[node name="errorEnemy" type="CharacterBody2D" unique_id=421159745]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_32fbd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=993901805]
+scale = Vector2(2, 2)
+texture = ExtResource("1_qfesc")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1575838772]
+shape = SubResource("CircleShape2D_32fbd")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1774651559]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=278450670]
+shape = SubResource("CircleShape2D_fwaax")
+debug_color = Color(0.42072195, 0.46271032, 1, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1742538648]
+wait_time = 0.1
+
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
