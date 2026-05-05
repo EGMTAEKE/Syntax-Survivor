@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://bxvce0s3udtoo"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_gaicu"]
+
+[resource]
+script = ExtResource("1_gaicu")
+id = "1"
+name = "Руна вывода"
+description = "Что появится на экране после print(\"Hello\")?"
+optionOne = "Hello"
+optionTwo = "print(\"Hello\")"
+optionThree = "Ошибка"
+countOptionTrue = "One"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

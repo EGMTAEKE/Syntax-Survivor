@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://d4m5mwj4ful0x"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_u12vn"]
+
+[resource]
+script = ExtResource("1_u12vn")
+id = "5"
+name = "Руна Знаний 5"
+description = "Что означает // или # в коде?"
+optionOne = "Деление чисел"
+optionTwo = "Комментарий "
+optionThree = "Умножение"
+countOptionTrue = "Two"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://cvtd4ofmbgvf0"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_0ch01"]
+
+[resource]
+script = ExtResource("1_0ch01")
+id = "6"
+name = "Руна Знаний 6"
+description = "Какой символ ставится в конце команды в C++?"
+optionOne = "Точка"
+optionTwo = "Двоеточие"
+optionThree = "Точка с запятой"
+countOptionTrue = "Three"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

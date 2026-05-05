@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://caqwgv0cb6pxq"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_67vbw"]
+
+[resource]
+script = ExtResource("1_67vbw")
+id = "7"
+name = "Руна Знаний 7"
+description = "Что делает оператор % в программировании?"
+optionOne = "Проценты"
+optionTwo = "Остаток от деления"
+optionThree = "Деление на ноль"
+countOptionTrue = "Two"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

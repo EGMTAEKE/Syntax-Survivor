@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="itemChest" format=3 uid="uid://7the1fy62flf"]
+
+[ext_resource type="Script" uid="uid://dixeh0yd65pt6" path="res://scripts/chestItems.gd" id="1_bj4no"]
+
+[resource]
+script = ExtResource("1_bj4no")
+id = "2"
+name = "Кофе"
+description = "Одобрено программистами, которые не спят уже двое суток. +60% к скорости"
+itemBonus = 90.0
+metadata/_custom_type_script = "uid://dixeh0yd65pt6"

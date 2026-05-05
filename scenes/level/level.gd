@@ -1,11 +1,12 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
+var timeStart = 0
 func _ready() -> void:
-	pass # Replace with function body.
+	timeStart = Time.get_ticks_msec()
 
+func elapsedTime():
+	var time = Time.get_ticks_msec() - timeStart
+	return time / 1000
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	$CanvasLayer/TimeLive.text = str(elapsedTime())

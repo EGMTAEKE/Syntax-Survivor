@@ -8,6 +8,8 @@ var health = 100
 var maxHealth = 100
 var experience = 0
 var maxExp = 100
+var damageMultiplier = 1
+var saveDamage = 1
 
 @onready var shootTimer = $ShootTimer
 @onready var spawn = $Spawn
@@ -23,7 +25,7 @@ func _process(_delta: float) -> void:
 	Movement()
 	direction = direction.normalized()
 	velocity = speed * direction
-	
+	$ProgressBar.value = $ProgressBar.value
 	
 	move_and_slide()
 
@@ -75,7 +77,7 @@ func _on_detection_body_exited(body: Node2D) -> void:
 func cheak():
 	for body in $detection.get_overlapping_bodies():
 		if body.is_in_group("enemies") and target == null:
-			target= body
+			target = body
 			shootTimer.start()
 
 func takeDamage(damageValue):
@@ -106,7 +108,6 @@ func takeExp(expValue):
 func levelUpMenuOpen():
 	var menu = preload("res://scenes/menu/level_up_menu.tscn").instantiate()
 	get_tree().root.add_child(menu)
-	#get_tree().paused = true
 	
 
 func die():
@@ -123,5 +124,21 @@ func apllyAbility(ability):
 		health = maxHealth
 		$ProgressBar.max_value = maxHealth
 		$ProgressBar.value = health
-	else:
-		pass
+	if ability.damageBonus != 0:
+		damageMultiplier += ability.damageBonus
+		saveDamage = damageMultiplier
+
+func takeRune(color):
+	$RunesTimer.start()
+	if color == Color.CRIMSON:
+		damageMultiplier = 1
+	elif color == Color.AQUA:
+		health = maxHealth
+	elif color == Color.GREEN_YELLOW:
+		speed += 100
+
+
+func _on_runes_timer_timeout() -> void:
+	$RunesTimer.stop()
+	damageMultiplier = saveDamage
+	speed = 150

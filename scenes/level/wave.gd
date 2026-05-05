@@ -2,10 +2,13 @@ extends Node2D
 
 @onready var enemyPool = $"../poolEnemy"
 @onready var spawnCooldown = $Timer
+var waveHP = 1
+var waveDS = 1.0 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawnCooldown.wait_time = 2
-	spawnCooldown.start() # Replace with function body.
+	spawnCooldown.start()
+	$damageSpeed.start()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,6 +18,9 @@ func _process(_delta: float) -> void:
 func getEnemyIsPool():
 	var enemy = enemyPool.getEnemy()
 	if enemy:
+		enemy.maxHealth = enemy.maxHealth * waveHP
+		enemy.damage = enemy.damage * waveDS
+		enemy.speed = enemy.speed * waveDS
 		enemy.visible = true
 		enemy.process_mode = Node.PROCESS_MODE_INHERIT
 		enemy.position = getSpawnPosition()
@@ -28,4 +34,9 @@ func getSpawnPosition():
 
 
 func _on_timer_timeout() -> void:
+	waveHP += 1
 	getEnemyIsPool() # Replace with function body.
+
+
+func _on_damage_speed_timeout() -> void:
+	waveDS += 0.1

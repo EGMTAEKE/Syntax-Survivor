@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://iunc52ys8rji" path="res://scenes/enemy/error_enemy.tscn" id="6_vpf64"]
 [ext_resource type="Script" uid="uid://cil3tnrcyg7ej" path="res://scenes/level/pool_enemy.gd" id="7_sytrn"]
 [ext_resource type="Script" uid="uid://c0tsxyp0gdtey" path="res://scenes/level/wave.gd" id="9_tf2q7"]
+[ext_resource type="PackedScene" uid="uid://cd7ujk6metbs8" path="res://scenes/items/rune.tscn" id="10_tf2q7"]
+[ext_resource type="PackedScene" uid="uid://dtxne14tsh0s1" path="res://scenes/items/chest.tscn" id="11_pe1ox"]
 
 [node name="level" type="Node2D" unique_id=1541133224]
 script = ExtResource("1_wcngd")
@@ -45,6 +47,16 @@ texture = ExtResource("4_hnne4")
 
 [node name="Tip" parent="CanvasLayer/Virtual Joystick/Base" index="0"]
 texture = ExtResource("5_vpf64")
+
+[node name="TimeLive" type="Label" parent="CanvasLayer" unique_id=1532863015]
+offset_right = 270.0
+offset_bottom = 50.0
+scale = Vector2(2, 2)
+text = "Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimerLive" type="Timer" parent="CanvasLayer/TimeLive" unique_id=969970865]
 
 [node name="poolEnemy" type="Node2D" parent="." unique_id=1765139882]
 script = ExtResource("7_sytrn")
@@ -105,6 +117,19 @@ script = ExtResource("9_tf2q7")
 [node name="Timer" type="Timer" parent="wave" unique_id=1468092994]
 wait_time = 2.0
 
+[node name="damageSpeed" type="Timer" parent="wave" unique_id=50728167]
+wait_time = 100.0
+
+[node name="Rune" parent="." unique_id=904072081 instance=ExtResource("10_tf2q7")]
+position = Vector2(523, -38)
+
+[node name="Chest" parent="." unique_id=1057180786 instance=ExtResource("11_pe1ox")]
+position = Vector2(286, -287)
+
+[node name="Rune2" parent="." unique_id=517505352 instance=ExtResource("10_tf2q7")]
+position = Vector2(-465, -10)
+
 [connection signal="timeout" from="wave/Timer" to="wave" method="_on_timer_timeout"]
+[connection signal="timeout" from="wave/damageSpeed" to="wave" method="_on_damage_speed_timeout"]
 
 [editable path="CanvasLayer/Virtual Joystick"]

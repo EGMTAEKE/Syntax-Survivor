@@ -46,10 +46,10 @@ corner_radius_top_left = 5
 bg_color = Color(1, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gtgg"]
-bg_color = Color(0, 0, 0, 0.30588236)
+bg_color = Color(0, 0, 0, 0.6862745)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h17s1"]
-bg_color = Color(0.3764706, 0.59607846, 0.4392157, 0.8980392)
+bg_color = Color(0.3764706, 0.59607846, 0.4392157, 0.9764706)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0owmy"]
 radius = 198.06313
@@ -103,6 +103,10 @@ position = Vector2(16, 0)
 
 [node name="ShootTimer" type="Timer" parent="." unique_id=323516980]
 
+[node name="RunesTimer" type="Timer" parent="." unique_id=693049546]
+wait_time = 10.0
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="timeout" from="RunesTimer" to="." method="_on_runes_timer_timeout"]

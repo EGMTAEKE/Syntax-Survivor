@@ -6,6 +6,5 @@
 script = ExtResource("1_1f51p")
 id = "healthBonus"
 name = "Выживаемость"
-description = "Жырный как после БК"
 healthBonus = 100
 metadata/_custom_type_script = "uid://dxtgqnqeev48n"

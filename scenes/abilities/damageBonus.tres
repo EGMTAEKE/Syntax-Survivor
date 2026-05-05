@@ -6,6 +6,5 @@
 script = ExtResource("1_feyxm")
 id = "damageBonus"
 name = "Урон"
-description = "Много урона по владу сопаву"
 damageBonus = 0.2
 metadata/_custom_type_script = "uid://dxtgqnqeev48n"

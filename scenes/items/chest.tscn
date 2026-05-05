@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dtxne14tsh0s1"]
+
+[ext_resource type="Script" uid="uid://c3qa7w6d44kqi" path="res://scenes/items/chest.gd" id="1_2obnk"]
+[ext_resource type="Texture2D" uid="uid://84tm2beqs6iv" path="res://scenes/items/Chest.png" id="1_korse"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yp1mr"]
+
+[node name="Chest" type="Area2D" unique_id=1057180786]
+script = ExtResource("1_2obnk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129775667]
+shape = SubResource("CircleShape2D_yp1mr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1162464116]
+texture = ExtResource("1_korse")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

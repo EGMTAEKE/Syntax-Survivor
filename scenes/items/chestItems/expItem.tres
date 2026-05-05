@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="itemChest" format=3 uid="uid://bqviyuyyualsq"]
+
+[ext_resource type="Script" uid="uid://dixeh0yd65pt6" path="res://scripts/chestItems.gd" id="1_mckhq"]
+
+[resource]
+script = ExtResource("1_mckhq")
+id = "1"
+name = "Основы C"
+description = "Книга, которую надо было прочитать ещё на первой сессии."
+itemBonus = 10.0
+metadata/_custom_type_script = "uid://dixeh0yd65pt6"

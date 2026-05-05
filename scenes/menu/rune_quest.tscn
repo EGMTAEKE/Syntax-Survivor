@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://4j5csa6vdrrc"]
+
+[ext_resource type="Script" uid="uid://dkd2b44ictynd" path="res://scenes/menu/rune_quest.gd" id="1_5qd6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux7by"]
+size = Vector2(100, 50)
+
+[node name="runeQuestion" type="CanvasLayer" unique_id=165967572]
+process_mode = 3
+script = ExtResource("1_5qd6o")
+
+[node name="Panel" type="Panel" parent="." unique_id=2095195463]
+offset_right = 540.0
+offset_bottom = 959.0
+
+[node name="Text" type="Label" parent="Panel" unique_id=1960185079]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 540.0
+offset_bottom = 110.0
+text = "Text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Description" type="Label" parent="Panel" unique_id=1041566723]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 136.0
+offset_right = 534.0
+offset_bottom = 695.0
+text = "Description"
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=121337026]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 856.0
+offset_right = 89.0
+offset_bottom = 856.0
+
+[node name="optionOne" type="TouchScreenButton" parent="Panel/HBoxContainer" unique_id=1460810140]
+position = Vector2(356, 0)
+shape = SubResource("RectangleShape2D_ux7by")
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/optionOne" unique_id=423040184]
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+text = "button"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="optionTwo" type="TouchScreenButton" parent="Panel/HBoxContainer" unique_id=1129200932]
+position = Vector2(184, 0)
+shape = SubResource("RectangleShape2D_ux7by")
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/optionTwo" unique_id=1300386745]
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+text = "button"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="optionThree" type="TouchScreenButton" parent="Panel/HBoxContainer" unique_id=35817536]
+position = Vector2(12, 0)
+shape = SubResource("RectangleShape2D_ux7by")
+
+[node name="Label" type="Label" parent="Panel/HBoxContainer/optionThree" unique_id=1519356601]
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+text = "button"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="Panel/HBoxContainer/optionOne" to="." method="_on_option_one_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/optionTwo" to="." method="_on_option_two_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/optionThree" to="." method="_on_option_three_pressed"]

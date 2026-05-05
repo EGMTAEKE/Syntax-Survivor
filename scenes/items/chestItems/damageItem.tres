@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="itemChest" format=3 uid="uid://dt7r73mymetwh"]
+
+[ext_resource type="Script" uid="uid://dixeh0yd65pt6" path="res://scripts/chestItems.gd" id="1_5ua1a"]
+
+[resource]
+script = ExtResource("1_5ua1a")
+id = "3"
+name = "Ошибка"
+description = "67 "
+itemBonus = 1000.0
+metadata/_custom_type_script = "uid://dixeh0yd65pt6"

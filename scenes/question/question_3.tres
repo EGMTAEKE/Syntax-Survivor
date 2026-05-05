@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://cg7yqrjfxxdf8"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_2ffnd"]
+
+[resource]
+script = ExtResource("1_2ffnd")
+id = "3"
+name = "Руна цикла"
+description = "Сколько раз выведется \"Hi\" в цикле for i in range(3)?"
+optionOne = "1"
+optionTwo = "2"
+optionThree = "3"
+countOptionTrue = "Three"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

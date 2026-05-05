@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://jsetxtqqurp6"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_i7be1"]
+
+[resource]
+script = ExtResource("1_i7be1")
+id = "10"
+name = "Руна Знаний 10"
+description = "\"Что произойдёт, если в рекурсивной функции, вычисляющей факториал, забыть написать базовое условие выхода?\"  function factorial(n):    return n * factorial(n - 1) "
+optionOne = "Функция вернёт 0"
+optionTwo = "Программа вызовет исключение Stack Overflow (переполнение стека)"
+optionThree = "Компьютер зависнет навсегда"
+countOptionTrue = "Two"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

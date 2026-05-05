@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://dllgnwu2f4h0s"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_ijooj"]
+
+[resource]
+script = ExtResource("1_ijooj")
+id = "9"
+name = "Руна Знаний 9"
+description = "Какой принцип ООП означает, что объект может скрывать свои внутренние данные?"
+optionOne = "Наследование"
+optionTwo = "Полиморфизм"
+optionThree = "Инкапсуляция "
+countOptionTrue = "Three"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

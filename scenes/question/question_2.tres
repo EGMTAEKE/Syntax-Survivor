@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://c2k3a87wjoinv"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_c0hyw"]
+
+[resource]
+script = ExtResource("1_c0hyw")
+id = "2"
+name = "Руна условия"
+description = "Чему равно x после x=5; x=x+3?"
+optionOne = "52"
+optionTwo = "8"
+optionThree = "67"
+countOptionTrue = "Two"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

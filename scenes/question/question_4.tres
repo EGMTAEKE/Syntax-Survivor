@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://b71gws3mr0d2x"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_gromr"]
+
+[resource]
+script = ExtResource("1_gromr")
+id = "4"
+name = "Руна Знаний 4"
+description = "Что делает функция print() в языке Python?"
+optionOne = "Сохраняет файл"
+optionTwo = "Выводит текст на экран"
+optionThree = "Создаёт переменную "
+countOptionTrue = "Two"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

@@ -6,6 +6,5 @@
 script = ExtResource("1_7q65i")
 id = "speedBonus"
 name = "Скорострельность"
-description = "не ну ебать ты тип конечно"
 speedBonus = 0.5
 metadata/_custom_type_script = "uid://dxtgqnqeev48n"

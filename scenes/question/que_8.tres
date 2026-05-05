@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="question" format=3 uid="uid://b7nodfktejrtm"]
+
+[ext_resource type="Script" uid="uid://cxqk0jce4w5t8" path="res://scripts/question.gd" id="1_0vq2o"]
+
+[resource]
+script = ExtResource("1_0vq2o")
+id = "8"
+name = "Руна Знаний 8"
+description = "Как называется ошибка, из-за которой программа зависает или вылетает?"
+optionOne = "Баг "
+optionTwo = "Фича"
+optionThree = "Патч"
+countOptionTrue = "One"
+metadata/_custom_type_script = "uid://cxqk0jce4w5t8"

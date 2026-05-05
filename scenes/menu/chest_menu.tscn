@@ -1,21 +1,21 @@
-[gd_scene format=3 uid="uid://gbqmiidiu5yj"]
+[gd_scene format=3 uid="uid://bdixmn478fvsn"]
 
-[ext_resource type="Script" uid="uid://b0b1su1b45dnp" path="res://scenes/menu/level_up_menu.gd" id="1_5dng8"]
+[ext_resource type="Script" uid="uid://css3yia7rywaj" path="res://scenes/menu/chest_menu.gd" id="1_t58t5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1dgh"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kouut"]
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlan6"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggu0q"]
 size = Vector2(160, 60)
 
-[node name="LevelUpMenu" type="CanvasLayer" unique_id=654798882]
+[node name="chestMenu" type="CanvasLayer" unique_id=1051411135]
 process_mode = 3
-script = ExtResource("1_5dng8")
+script = ExtResource("1_t58t5")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=802812062]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1427791930]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -25,22 +25,22 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0.34901962)
 
-[node name="Panel" type="Panel" parent="." unique_id=659198062]
+[node name="Panel" type="Panel" parent="." unique_id=1941968582]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 957.0
 grow_horizontal = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="Panel" unique_id=1703876613]
+[node name="Label" type="Label" parent="Panel" unique_id=2090708577]
 layout_mode = 0
 offset_right = 540.0
 offset_bottom = 62.0
-text = "Повышение уровня"
+text = "Выберите Предмет"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1053605572]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1976796611]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 300.0
@@ -49,11 +49,11 @@ offset_bottom = 580.0
 mouse_filter = 2
 theme_override_constants/separation = 8
 
-[node name="card1" type="Control" parent="Panel/HBoxContainer" unique_id=736871528]
+[node name="card1" type="Control" parent="Panel/HBoxContainer" unique_id=5447575]
 custom_minimum_size = Vector2(170, 280)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card1" unique_id=717797687]
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card1" unique_id=532502513]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,9 +61,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1dgh")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kouut")
 
-[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card1" unique_id=535113394]
+[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card1" unique_id=304989833]
 layout_mode = 0
 offset_top = 20.0
 offset_right = 170.0
@@ -72,7 +72,7 @@ theme_override_font_sizes/font_size = 18
 text = "NameLabel"
 horizontal_alignment = 1
 
-[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card1" unique_id=103346346]
+[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card1" unique_id=1802403185]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 60.0
@@ -82,11 +82,11 @@ text = "DescLabel"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card1" unique_id=715409929]
+[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card1" unique_id=2027292233]
 position = Vector2(85, 230)
-shape = SubResource("RectangleShape2D_wlan6")
+shape = SubResource("RectangleShape2D_ggu0q")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/card1/SelectButton" unique_id=2044898344]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/card1/SelectButton" unique_id=922797721]
 offset_left = -80.0
 offset_top = -30.0
 offset_right = 80.0
@@ -95,11 +95,11 @@ text = "Выбрать"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="card2" type="Control" parent="Panel/HBoxContainer" unique_id=1217905906]
+[node name="card2" type="Control" parent="Panel/HBoxContainer" unique_id=2094941426]
 custom_minimum_size = Vector2(170, 280)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card2" unique_id=860682124]
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card2" unique_id=624519806]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -107,9 +107,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1dgh")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kouut")
 
-[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=1406953519]
+[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=391730112]
 layout_mode = 0
 offset_top = 20.0
 offset_right = 170.0
@@ -118,7 +118,7 @@ theme_override_font_sizes/font_size = 18
 text = "NameLabel"
 horizontal_alignment = 1
 
-[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=1993385783]
+[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=1449586048]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 60.0
@@ -128,11 +128,11 @@ text = "DescLabel"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card2" unique_id=1212046264]
+[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card2" unique_id=637529605]
 position = Vector2(85, 230)
-shape = SubResource("RectangleShape2D_wlan6")
+shape = SubResource("RectangleShape2D_ggu0q")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/card2/SelectButton" unique_id=235577499]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/card2/SelectButton" unique_id=1738432159]
 offset_left = -80.0
 offset_top = -30.0
 offset_right = 80.0
@@ -141,11 +141,11 @@ text = "Выбрать"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="card3" type="Control" parent="Panel/HBoxContainer" unique_id=976426375]
+[node name="card3" type="Control" parent="Panel/HBoxContainer" unique_id=297209934]
 custom_minimum_size = Vector2(170, 280)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card3" unique_id=2071312344]
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card3" unique_id=2013172199]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -153,9 +153,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_v1dgh")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kouut")
 
-[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=461559571]
+[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=2143838085]
 layout_mode = 0
 offset_top = 20.0
 offset_right = 170.0
@@ -164,7 +164,7 @@ theme_override_font_sizes/font_size = 18
 text = "NameLabel"
 horizontal_alignment = 1
 
-[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=1408804319]
+[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=689289825]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 60.0
@@ -174,11 +174,11 @@ text = "DescLabel"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card3" unique_id=66352490]
+[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card3" unique_id=1771626158]
 position = Vector2(85, 230)
-shape = SubResource("RectangleShape2D_wlan6")
+shape = SubResource("RectangleShape2D_ggu0q")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/card3/SelectButton" unique_id=1604653706]
+[node name="Label" type="Label" parent="Panel/HBoxContainer/card3/SelectButton" unique_id=90367493]
 offset_left = -80.0
 offset_top = -30.0
 offset_right = 80.0
