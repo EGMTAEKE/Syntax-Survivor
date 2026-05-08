@@ -47,6 +47,5 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
-	flagDead = false
 	enemy_pool.returnEnemy(self) # Replace with function body.
 	$Timer.stop()

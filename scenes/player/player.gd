@@ -17,7 +17,7 @@ var saveDamage = 1
 func _ready() -> void:
 	cheak() 
 	$ProgressBar.value = 100
-	$experienceBar.value = 0
+	%experienceBar.value = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -94,13 +94,13 @@ func takeExp(expValue):
 		print("Уровень повышен")
 		experience = 0
 		maxExp = maxExp + 200
-		$experienceBar.max_value = maxExp 
+		%experienceBar.max_value = maxExp 
 		maxHealth = maxHealth + 20
 		$ProgressBar.max_value = maxHealth
 		health = maxHealth
 		levelUpMenuOpen()
 		
-	$experienceBar.value = experience
+	%experienceBar.value = experience
 	$ProgressBar.value = health
 	
 	

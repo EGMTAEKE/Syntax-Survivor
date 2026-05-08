@@ -24,6 +24,7 @@ func getEnemyIsPool():
 		enemy.visible = true
 		enemy.process_mode = Node.PROCESS_MODE_INHERIT
 		enemy.position = getSpawnPosition()
+		print(enemy.maxHealth)
 		
 func getSpawnPosition():
 	var player = get_tree().get_first_node_in_group("players")
@@ -34,7 +35,11 @@ func getSpawnPosition():
 
 
 func _on_timer_timeout() -> void:
-	waveHP += 1
+	if enemyPool.checkPoolAlive() == true:
+		print("все мертвыв")
+		await get_tree().create_timer(5).timeout
+		enemyPool.reset()
+		waveHP += 1
 	getEnemyIsPool() # Replace with function body.
 
 

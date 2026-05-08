@@ -45,14 +45,14 @@ corner_radius_top_left = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qek5x"]
 bg_color = Color(1, 0, 0, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0owmy"]
+radius = 198.06313
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gtgg"]
 bg_color = Color(0, 0, 0, 0.6862745)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h17s1"]
 bg_color = Color(0.3764706, 0.59607846, 0.4392157, 0.9764706)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0owmy"]
-radius = 198.06313
 
 [node name="player" type="CharacterBody2D" unique_id=396867853]
 collision_mask = 10
@@ -81,16 +81,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_qek5x")
 value = 75.0
 show_percentage = false
 
-[node name="experienceBar" type="ProgressBar" parent="." unique_id=162658859]
-offset_left = -135.0
-offset_top = -308.0
-offset_right = 135.0
-offset_bottom = -298.0
-theme_override_styles/background = SubResource("StyleBoxFlat_5gtgg")
-theme_override_styles/fill = SubResource("StyleBoxFlat_h17s1")
-value = 22.0
-show_percentage = false
-
 [node name="detection" type="Area2D" parent="." unique_id=1624775287]
 collision_mask = 2
 
@@ -105,6 +95,35 @@ position = Vector2(16, 0)
 
 [node name="RunesTimer" type="Timer" parent="." unique_id=693049546]
 wait_time = 10.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1687712578]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=2024958918]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="experienceBar" type="ProgressBar" parent="CanvasLayer/UI" unique_id=162658859]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -2.875
+anchor_right = 3.875
+anchor_bottom = 0.25
+offset_left = -135.0
+offset_right = 135.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_5gtgg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_h17s1")
+value = 22.0
+show_percentage = false
 
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
