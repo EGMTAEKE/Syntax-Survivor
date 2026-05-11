@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:
 		var quest = preload("res://scenes/menu/rune_quest.tscn").instantiate()
-		add_child(quest)
-		
+		quest.setRune(self)
+		get_parent().add_child(quest)
 
 	

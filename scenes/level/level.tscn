@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://iunc52ys8rji" path="res://scenes/enemy/error_enemy.tscn" id="6_vpf64"]
 [ext_resource type="Script" uid="uid://cil3tnrcyg7ej" path="res://scenes/level/pool_enemy.gd" id="7_sytrn"]
 [ext_resource type="Script" uid="uid://c0tsxyp0gdtey" path="res://scenes/level/wave.gd" id="9_tf2q7"]
-[ext_resource type="PackedScene" uid="uid://cd7ujk6metbs8" path="res://scenes/items/rune.tscn" id="10_tf2q7"]
-[ext_resource type="PackedScene" uid="uid://dtxne14tsh0s1" path="res://scenes/items/chest.tscn" id="11_pe1ox"]
 
 [node name="level" type="Node2D" unique_id=1541133224]
 script = ExtResource("1_wcngd")
@@ -120,16 +118,17 @@ wait_time = 2.0
 [node name="damageSpeed" type="Timer" parent="wave" unique_id=50728167]
 wait_time = 100.0
 
-[node name="Rune" parent="." unique_id=904072081 instance=ExtResource("10_tf2q7")]
-position = Vector2(523, -38)
+[node name="spawnRune" type="Timer" parent="." unique_id=1694290641]
+wait_time = 120.0
+autostart = true
 
-[node name="Chest" parent="." unique_id=1057180786 instance=ExtResource("11_pe1ox")]
-position = Vector2(286, -287)
-
-[node name="Rune2" parent="." unique_id=517505352 instance=ExtResource("10_tf2q7")]
-position = Vector2(-465, -10)
+[node name="spawnChest" type="Timer" parent="." unique_id=1452300032]
+wait_time = 150.0
+autostart = true
 
 [connection signal="timeout" from="wave/Timer" to="wave" method="_on_timer_timeout"]
 [connection signal="timeout" from="wave/damageSpeed" to="wave" method="_on_damage_speed_timeout"]
+[connection signal="timeout" from="spawnRune" to="." method="_on_spawn_rune_timeout"]
+[connection signal="timeout" from="spawnChest" to="." method="_on_spawn_chest_timeout"]
 
 [editable path="CanvasLayer/Virtual Joystick"]

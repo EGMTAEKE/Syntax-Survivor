@@ -9,12 +9,14 @@ var maxHealth = 100
 var experience = 0
 var maxExp = 100
 var damageMultiplier = 1
+var expMult = 1
 var saveDamage = 1
 
 @onready var shootTimer = $ShootTimer
 @onready var spawn = $Spawn
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	z_index = 1
 	cheak() 
 	$ProgressBar.value = 100
 	%experienceBar.value = 0
@@ -89,7 +91,7 @@ func takeDamage(damageValue):
 		die()
 
 func takeExp(expValue):
-	experience += expValue
+	experience += expValue * expMult
 	if experience >= maxExp:
 		print("Уровень повышен")
 		experience = 0
@@ -127,6 +129,11 @@ func apllyAbility(ability):
 	if ability.damageBonus != 0:
 		damageMultiplier += ability.damageBonus
 		saveDamage = damageMultiplier
+		
+func  apllyItem(item):
+	speed += item.itemSpeed
+	damageMultiplier += item.itemDamage
+	expMult += item.itemExp
 
 func takeRune(color):
 	$RunesTimer.start()

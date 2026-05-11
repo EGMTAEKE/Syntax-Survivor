@@ -20,6 +20,10 @@ config/handheld/orientation=0
 config/stretch/aspect="keep"
 config/stretch/mode="disabled"
 
+[autoload]
+
+global="*uid://blwgvf5s5k4m2"
+
 [display]
 
 window/size/viewport_width=540

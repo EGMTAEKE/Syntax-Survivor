@@ -125,6 +125,9 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_h17s1")
 value = 22.0
 show_percentage = false
 
+[node name="ArrowIndicator" type="Marker2D" parent="." unique_id=1959453032]
+unique_name_in_owner = true
+
 [connection signal="body_entered" from="detection" to="." method="_on_detection_body_entered"]
 [connection signal="body_exited" from="detection" to="." method="_on_detection_body_exited"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

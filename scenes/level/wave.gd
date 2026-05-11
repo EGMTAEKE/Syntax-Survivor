@@ -37,9 +37,11 @@ func getSpawnPosition():
 func _on_timer_timeout() -> void:
 	if enemyPool.checkPoolAlive() == true:
 		print("все мертвыв")
+		$Timer.stop()
 		await get_tree().create_timer(5).timeout
 		enemyPool.reset()
 		waveHP += 1
+		$Timer.start()
 	getEnemyIsPool() # Replace with function body.
 
 

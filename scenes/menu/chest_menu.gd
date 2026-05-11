@@ -1,26 +1,30 @@
 extends CanvasLayer
 
-var items = [
-	preload("res://scenes/items/chestItems/expItem.tres"),
-	preload("res://scenes/items/chestItems/damageItem.tres"),
-	preload("res://scenes/items/chestItems/speedItem.tres")
-]
+var items = []
 var chest = null
-
+var item = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	chest = get_tree().get_first_node_in_group("chest")
+	items = global.items.duplicate()
+	var count = min(3,items.size())
+	
 	get_tree().paused = true
 	items.shuffle()
-	for i in range(3):
+	for i in range(count):
 		var card = $Panel/HBoxContainer.get_child(i)
-		var item = items[i]
+		item = items[i]
 		
 		card.get_node("NameLabel").text = item.name
 		card.get_node("DescLabel").text = item.description
 		
 		var button = card.get_node("SelectButton")
 		button.pressed.connect(func ():paus())
+	
+	for i in range(count,3):
+		$Panel/HBoxContainer.get_child(i).visible = false
+	
+		
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,6 +32,9 @@ func _process(delta: float) -> void:
 	pass
 
 func paus():
+	var player = get_tree().get_first_node_in_group("players")
+	player.apllyItem(item)
+	global.items.erase(item)
 	chest.queue_free()
 	get_tree().paused = false
 	queue_free()

@@ -29,7 +29,7 @@ shape = SubResource("CircleShape2D_fwaax")
 debug_color = Color(0.42072195, 0.46271032, 1, 0.41960785)
 
 [node name="Timer" type="Timer" parent="." unique_id=1742538648]
-wait_time = 0.1
+wait_time = 0.001
 
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

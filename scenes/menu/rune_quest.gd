@@ -15,6 +15,7 @@ var questions = [
 var runeColor = null
 var player = null
 var quest = null
+var rune = null
 func _ready() -> void:
 	
 	runeColor = get_tree().get_first_node_in_group("runes")
@@ -38,13 +39,13 @@ func _process(_delta: float) -> void:
 func _on_option_one_pressed() -> void:
 	if quest.countOptionTrue == "One":
 		print("верный ответ")
-		player.takeRune(runeColor.get_node("Polygon2D").color)
-		if runeColor:
-			runeColor.queue_free()
+		player.takeRune(rune.get_node("Polygon2D").color)
+		if rune:
+			rune.queue_free()
 	else:
 		print("не верный ответ")
-		if runeColor:
-			runeColor.queue_free()
+		if rune:
+			rune.queue_free()
 	get_tree().paused = false
 	queue_free()
 
@@ -52,13 +53,13 @@ func _on_option_one_pressed() -> void:
 func _on_option_two_pressed() -> void:
 	if quest.countOptionTrue == "Two":
 		print("верный ответ")
-		player.takeRune(runeColor.get_node("Polygon2D").color)
-		if runeColor:
-			runeColor.queue_free()
+		player.takeRune(rune.get_node("Polygon2D").color)
+		if rune:
+			rune.queue_free()
 	else:
 		print("не верный ответ")
-		if runeColor:
-			runeColor.queue_free()
+		if rune:
+			rune.queue_free()
 	get_tree().paused = false
 	queue_free()
 
@@ -66,12 +67,15 @@ func _on_option_two_pressed() -> void:
 func _on_option_three_pressed() -> void:
 	if quest.countOptionTrue == "Three":
 		print("верный ответ")
-		player.takeRune(runeColor.get_node("Polygon2D").color)
-		if runeColor:
-			runeColor.queue_free()
+		player.takeRune(rune.get_node("Polygon2D").color)
+		if rune:
+			rune.queue_free()
 	else:
 		print("не верный ответ")
-		if runeColor:
-			runeColor.queue_free()
+		if rune:
+			rune.queue_free()
 	get_tree().paused = false
 	queue_free()
+
+func setRune(runeNode):
+	rune = runeNode

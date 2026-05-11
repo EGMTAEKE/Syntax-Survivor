@@ -7,5 +7,5 @@ script = ExtResource("1_bj4no")
 id = "2"
 name = "Кофе"
 description = "Одобрено программистами, которые не спят уже двое суток. +60% к скорости"
-itemBonus = 90.0
+itemSpeed = 100.0
 metadata/_custom_type_script = "uid://dixeh0yd65pt6"

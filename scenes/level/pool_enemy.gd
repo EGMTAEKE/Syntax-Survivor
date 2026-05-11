@@ -28,7 +28,7 @@ func checkPoolAlive():
 	for enemy in get_children():
 		if not "flagDead" in enemy:
 			continue
-		if enemy.visible == true and not enemy.flagDead:
+		if not enemy.flagDead:
 			allDead = false
 			break
 	return allDead

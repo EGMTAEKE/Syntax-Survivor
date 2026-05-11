@@ -4,4 +4,6 @@ class_name itemChest
 @export var id: String = ""
 @export var name: String = ""
 @export var description: String = ""
-@export var itemBonus: float = 0
+@export var itemSpeed: float = 0
+@export var itemDamage: float = 0
+@export var itemExp: float = 0

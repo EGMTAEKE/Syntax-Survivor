@@ -7,5 +7,5 @@ script = ExtResource("1_mckhq")
 id = "1"
 name = "Основы C"
 description = "Книга, которую надо было прочитать ещё на первой сессии."
-itemBonus = 10.0
+itemExp = 1000.0
 metadata/_custom_type_script = "uid://dixeh0yd65pt6"

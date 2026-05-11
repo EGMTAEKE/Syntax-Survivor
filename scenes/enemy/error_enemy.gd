@@ -7,7 +7,7 @@ var health = 100
 var maxHealth = 100
 var damage = 20
 
-var flagDead = false
+@export var flagDead = false
 
 @onready var enemy_pool = get_parent()
 # Called when the node enters the scene tree for the first time.
