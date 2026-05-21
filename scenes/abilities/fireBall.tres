@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://coq4sp0a3ua5y"]
+
+[ext_resource type="Script" uid="uid://dxtgqnqeev48n" path="res://scripts/ability.gd" id="1_bey1w"]
+[ext_resource type="PackedScene" uid="uid://ctvyiohc3g5qj" path="res://scenes/abilities/abilitiScenes/fireball.tscn" id="1_nb2m3"]
+
+[resource]
+script = ExtResource("1_bey1w")
+id = "4"
+name = "FireBall"
+description = "Бросайте спас от смерти или сгорите заживо!"
+preloadAbility = ExtResource("1_nb2m3")
+metadata/_custom_type_script = "uid://dxtgqnqeev48n"

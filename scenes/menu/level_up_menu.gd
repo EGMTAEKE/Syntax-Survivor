@@ -3,9 +3,10 @@ extends CanvasLayer
 @onready var player = null
 
 var abilities = [
-	preload("res://scenes/abilities/speedBonus.tres"),
-	preload("res://scenes/abilities/healthBonus.tres"),
-	preload("res://scenes/abilities/damageBonus.tres")
+	preload("res://scenes/abilities/passives/speedBonus.tres"),
+	preload("res://scenes/abilities/passives/healthBonus.tres"),
+	preload("res://scenes/abilities/passives/damageBonus.tres"),
+	preload("res://scenes/abilities/fireBall.tres")
 ]
 
 # Called when the node enters the scene tree for the first time.

@@ -42,7 +42,8 @@ func _on_timer_timeout() -> void:
 		enemyPool.reset()
 		waveHP += 1
 		$Timer.start()
-	getEnemyIsPool() # Replace with function body.
+	getEnemyIsPool()
+	getEnemyIsPool()
 
 
 func _on_damage_speed_timeout() -> void:

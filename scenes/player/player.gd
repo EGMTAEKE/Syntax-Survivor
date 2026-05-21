@@ -3,7 +3,7 @@ extends CharacterBody2D
 var speed = 150
 var direction = Vector2.ZERO
 var anim
-var target = null
+var targets = []
 var health = 100
 var maxHealth = 100
 var experience = 0
@@ -11,6 +11,7 @@ var maxExp = 100
 var damageMultiplier = 1
 var expMult = 1
 var saveDamage = 1
+var activeAbility = []
 
 @onready var shootTimer = $ShootTimer
 @onready var spawn = $Spawn
@@ -27,7 +28,7 @@ func _process(_delta: float) -> void:
 	Movement()
 	direction = direction.normalized()
 	velocity = speed * direction
-	$ProgressBar.value = $ProgressBar.value
+	#$ProgressBar.value = $ProgressBar.value
 	
 	move_and_slide()
 
@@ -50,36 +51,43 @@ func updateAnim():
 
 
 func _on_detection_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies") and target == null:
-		target = body
+	if body.is_in_group("enemies") : #and target == null
+		targets.append(body)
 		shootTimer.start()
 		#print("враг в зоне")
 
 func cursorshoot():
+	if targets.is_empty():
+		return
 	var cursor_scene = preload("res://scenes/cursor/cursor.tscn")
 	var cursor = cursor_scene.instantiate()
 	cursor.global_position = spawn.global_position
-	cursor.direction = (target.global_position - global_position).normalized()
+	cursor.direction = (targets.pick_random().global_position - global_position).normalized()
 	
 	get_parent().add_child(cursor)
 	
 
 
 func _on_shoot_timer_timeout() -> void:
+	if targets.is_empty():
+		return
+	apllyActiveAbility(activeAbility)
+	
 	cursorshoot() # Replace with function body.
 
 
 func _on_detection_body_exited(body: Node2D) -> void:
-	if body == target:
-		target = null
-		shootTimer.stop()
-		print("враг не в зоне")
-		cheak()
+	if body in targets:
+		targets.erase(body)
+		if targets.is_empty():
+			shootTimer.stop()
+			print("враг не в зоне")
+		#cheak()
 
 func cheak():
 	for body in $detection.get_overlapping_bodies():
-		if body.is_in_group("enemies") and target == null:
-			target = body
+		if body.is_in_group("enemies") and body not in targets:
+			targets.append(body)
 			shootTimer.start()
 
 func takeDamage(damageValue):
@@ -118,7 +126,23 @@ func die():
 func backToMenu():
 	get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
 
+func apllyActiveAbility(activeAbilityArray):
+	if targets.is_empty():
+		return
+		
+	for ability in activeAbilityArray:
+		if ability.preloadAbility == null:
+			continue
+		var Scene = ability.preloadAbility
+		var Spell = Scene.instantiate()
+		Spell.global_position = spawn.global_position
+		Spell.direction = (targets.pick_random().global_position - global_position).normalized()
+		get_parent().add_child(Spell)
+		
+	
 func apllyAbility(ability):
+	if ability.preloadAbility != null:
+		activeAbility.append(ability)
 	if ability.speedBonus != 0:
 		$ShootTimer.wait_time = $ShootTimer.wait_time * (1 - ability.speedBonus)
 	if ability.healthBonus != 0:

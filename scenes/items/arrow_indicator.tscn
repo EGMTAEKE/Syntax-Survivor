@@ -1,18 +1,18 @@
 [gd_scene format=3 uid="uid://cw04n1lt17r3i"]
 
-[ext_resource type="Texture2D" uid="uid://bv4wpbubi1g63" path="res://scenes/items/ArrowIndicator.png" id="1_emhvn"]
 [ext_resource type="Script" uid="uid://cjfp4bb7srhtv" path="res://scenes/items/arrow_indicator.gd" id="1_mijk1"]
+[ext_resource type="Texture2D" uid="uid://bl60hlitbrb1y" path="res://scenes/items/ArrowIndicator2.png" id="2_mijk1"]
 
 [node name="ArrowIndicator" type="Node2D" unique_id=2104829851]
 script = ExtResource("1_mijk1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=721209440]
-visible = false
 modulate = Color(1, 1, 1, 0.54509807)
-scale = Vector2(2, 2)
-texture = ExtResource("1_emhvn")
+position = Vector2(40, 0)
+texture = ExtResource("2_mijk1")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1069656929]
+visible = false
 position = Vector2(40, 0)
 color = Color(0.7764706, 0.42352942, 0.2784314, 0.50980395)
 polygon = PackedVector2Array(-13, -1, -13, 1, 1, 1, 1, 4, 5, 0, 1, -3, 1, -1)
