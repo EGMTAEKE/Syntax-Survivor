@@ -16,8 +16,10 @@ func _process(_delta: float) -> void:
 	pass
 
 func getEnemyIsPool():
+	var scaleValue = randf_range(0.8,1.2)
 	var enemy = enemyPool.getEnemy()
 	if enemy:
+		enemy.scale = Vector2(scaleValue,scaleValue)
 		enemy.maxHealth = enemy.maxHealth * waveHP
 		enemy.damage = enemy.damage * waveDS
 		enemy.speed = enemy.speed * waveDS
@@ -42,8 +44,8 @@ func _on_timer_timeout() -> void:
 		enemyPool.reset()
 		waveHP += 1
 		$Timer.start()
-	getEnemyIsPool()
-	getEnemyIsPool()
+	for i in range(randi_range(1, 5)):
+		getEnemyIsPool()
 
 
 func _on_damage_speed_timeout() -> void:

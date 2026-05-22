@@ -18,7 +18,7 @@ var activeAbility = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	z_index = 1
-	cheak() 
+	cheak()
 	$ProgressBar.value = 100
 	%experienceBar.value = 0
 
@@ -51,10 +51,11 @@ func updateAnim():
 
 
 func _on_detection_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemies") : #and target == null
+	if body.is_in_group("enemies"):
 		targets.append(body)
-		shootTimer.start()
-		#print("враг в зоне")
+		if shootTimer.is_stopped():
+			shootTimer.start()
+		print("враг в зоне")
 
 func cursorshoot():
 	if targets.is_empty():
@@ -62,7 +63,7 @@ func cursorshoot():
 	var cursor_scene = preload("res://scenes/cursor/cursor.tscn")
 	var cursor = cursor_scene.instantiate()
 	cursor.global_position = spawn.global_position
-	cursor.direction = (targets.pick_random().global_position - global_position).normalized()
+	cursor.direction = (targets[0].global_position - global_position).normalized()
 	
 	get_parent().add_child(cursor)
 	
@@ -82,13 +83,14 @@ func _on_detection_body_exited(body: Node2D) -> void:
 		if targets.is_empty():
 			shootTimer.stop()
 			print("враг не в зоне")
-		#cheak()
+		cheak()
 
 func cheak():
 	for body in $detection.get_overlapping_bodies():
 		if body.is_in_group("enemies") and body not in targets:
 			targets.append(body)
 			shootTimer.start()
+		
 
 func takeDamage(damageValue):
 	health -= damageValue

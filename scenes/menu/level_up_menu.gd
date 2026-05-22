@@ -2,20 +2,19 @@ extends CanvasLayer
 
 @onready var player = null
 
-var abilities = [
-	preload("res://scenes/abilities/passives/speedBonus.tres"),
-	preload("res://scenes/abilities/passives/healthBonus.tres"),
-	preload("res://scenes/abilities/passives/damageBonus.tres"),
-	preload("res://scenes/abilities/fireBall.tres")
-]
+var abilities = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("players")
 	get_tree().paused = true
+	abilities = global.ability.duplicate()
 	abilities.shuffle()
-	 
-	for i in range(3):
+	var count = min(3,abilities.size())
+	if count == 0:
+		get_tree().paused = false
+		queue_free()
+	for i in range(count):
 		var card  = $Panel/HBoxContainer.get_child(i)
 		var ability = abilities[i]
 		
@@ -24,6 +23,9 @@ func _ready() -> void:
 		
 		var button = card.get_node("SelectButton") 
 		button.pressed.connect(func():chooseAbility(ability))
+	
+	for i in range(count,3):
+		$Panel/HBoxContainer.get_child(i).visible = false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,5 +36,8 @@ func chooseAbility(ability):
 	if player == null:
 		player = get_tree().get_first_node_in_group("players")
 	player.apllyAbility(ability)
+	ability.Level += 1
+	if ability.lastLevel == ability.Level:
+		global.ability.erase(ability)
 	get_tree().paused = false
 	queue_free()

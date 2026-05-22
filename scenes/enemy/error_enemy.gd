@@ -6,6 +6,7 @@ var player = null
 var health = 100
 var maxHealth = 100
 var damage = 20
+var push = false
 
 @export var flagDead = false
 
@@ -18,7 +19,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	enemyMove()
+	if not push:
+		enemyMove()
 	move_and_slide()
 	
 func enemyMove():
@@ -41,8 +43,21 @@ func ret():
 	get_parent().add_child(expIns)
 
 func _on_attack_area_body_entered(body: Node2D) -> void:
-	if body == player:
-		player.takeDamage(damage)
+	var pushPower = null
+	if body == player or body.is_in_group("enemies"):
+				
+		if body == player:
+			pushPower = 3
+			player.takeDamage(damage)
+		if not push:
+			if body.is_in_group("enemies"):
+				pushPower = 1
+			push = true
+			var directionPush = (global_position - body.global_position).normalized()
+			velocity = directionPush * (speed * pushPower)
+			await get_tree().create_timer(0.2).timeout
+			velocity = Vector2.ZERO
+			push = false
 		
 
 

@@ -109,11 +109,61 @@ process_mode = 4
 visible = false
 position = Vector2(-500, 0)
 
+[node name="errorEnemy11" parent="poolEnemy" unique_id=1221948469 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy12" parent="poolEnemy" unique_id=757662997 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy13" parent="poolEnemy" unique_id=528375759 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy14" parent="poolEnemy" unique_id=1934632706 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy15" parent="poolEnemy" unique_id=1340480737 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy16" parent="poolEnemy" unique_id=1786747817 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy17" parent="poolEnemy" unique_id=761243471 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy18" parent="poolEnemy" unique_id=1577057936 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy19" parent="poolEnemy" unique_id=266774866 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
+[node name="errorEnemy20" parent="poolEnemy" unique_id=929487717 groups=["enemies"] instance=ExtResource("6_vpf64")]
+process_mode = 4
+visible = false
+position = Vector2(-501, 1)
+
 [node name="wave" type="Node2D" parent="." unique_id=1957819466]
 script = ExtResource("9_tf2q7")
 
 [node name="Timer" type="Timer" parent="wave" unique_id=1468092994]
-wait_time = 2.0
+wait_time = 5.0
 
 [node name="damageSpeed" type="Timer" parent="wave" unique_id=50728167]
 wait_time = 100.0

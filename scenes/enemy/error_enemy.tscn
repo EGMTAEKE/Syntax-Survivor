@@ -23,6 +23,7 @@ hframes = 2
 shape = SubResource("CircleShape2D_32fbd")
 
 [node name="AttackArea" type="Area2D" parent="." unique_id=1774651559]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=278450670]
 shape = SubResource("CircleShape2D_fwaax")

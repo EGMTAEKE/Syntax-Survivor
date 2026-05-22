@@ -9,4 +9,5 @@ id = "4"
 name = "FireBall"
 description = "Бросайте спас от смерти или сгорите заживо!"
 preloadAbility = ExtResource("1_nb2m3")
+lastLevel = 3
 metadata/_custom_type_script = "uid://dxtgqnqeev48n"

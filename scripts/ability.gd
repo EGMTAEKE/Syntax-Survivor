@@ -8,3 +8,5 @@ class_name Ability
 @export var speedBonus: float = 0
 @export var healthBonus: int = 0
 @export var preloadAbility: PackedScene
+@export var lastLevel: int = 0
+@export var Level: int = 0
