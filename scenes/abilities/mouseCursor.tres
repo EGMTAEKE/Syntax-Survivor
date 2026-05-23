@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Ability" format=3 uid="uid://deg6xpa0mnfuo"]
+
+[ext_resource type="PackedScene" uid="uid://b5dfkcc8kglin" path="res://scenes/abilities/abilitiScenes/mouse_cursor.tscn" id="1_lwdle"]
+[ext_resource type="Script" uid="uid://dxtgqnqeev48n" path="res://scripts/ability.gd" id="1_taiha"]
+
+[resource]
+script = ExtResource("1_taiha")
+id = "5"
+name = "Курсор"
+description = "Почему бы собственно не стрелять курсорами от мышки?"
+preloadAbility = ExtResource("1_lwdle")
+lastLevel = 4
+metadata/_custom_type_script = "uid://dxtgqnqeev48n"

@@ -7,5 +7,5 @@ script = ExtResource("1_5ua1a")
 id = "3"
 name = "Ошибка"
 description = "67 "
-itemDamage = 100.0
+itemDamage = 5.0
 metadata/_custom_type_script = "uid://dixeh0yd65pt6"

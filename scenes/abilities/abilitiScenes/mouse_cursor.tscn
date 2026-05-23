@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b5dfkcc8kglin"]
+
+[ext_resource type="Script" uid="uid://caisg7utg1y55" path="res://scenes/abilities/abilitiScripts/mouse_cursor.gd" id="1_a5hgt"]
+[ext_resource type="Texture2D" uid="uid://bqrnc8hgso5qi" path="res://scenes/cursor/cursor.png" id="2_kuno3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_werjq"]
+
+[node name="mouseCursor" type="Area2D" unique_id=1397827870]
+script = ExtResource("1_a5hgt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2039000743]
+shape = SubResource("CircleShape2D_werjq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2021646831]
+rotation = 2.0943952
+texture = ExtResource("2_kuno3")
+
+[node name="Timer" type="Timer" parent="." unique_id=785809115]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

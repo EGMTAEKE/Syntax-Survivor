@@ -15,7 +15,7 @@ run/main_scene="uid://drg3d3n77ddrk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 config/emulate_touch_from_mouse=false
-config/emulate_mouse_from_touch=true
+config/emulate_mouse_from_touch=false
 config/handheld/orientation=0
 config/stretch/aspect="keep"
 config/stretch/mode="disabled"
@@ -31,6 +31,10 @@ window/size/viewport_height=960
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/addons/onscreenkeyboard/plugin.cfg")
 
 [global_group]
 

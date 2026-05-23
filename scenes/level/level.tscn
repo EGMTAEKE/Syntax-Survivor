@@ -169,7 +169,6 @@ wait_time = 5.0
 wait_time = 100.0
 
 [node name="spawnRune" type="Timer" parent="." unique_id=1694290641]
-wait_time = 120.0
 autostart = true
 
 [node name="spawnChest" type="Timer" parent="." unique_id=1452300032]

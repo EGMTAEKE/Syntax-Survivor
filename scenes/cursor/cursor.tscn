@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bcechrn8rmscb" path="res://scenes/cursor/cursor.gd" id="1_tanhk"]
 [ext_resource type="Texture2D" uid="uid://bqrnc8hgso5qi" path="res://scenes/cursor/cursor.png" id="1_v0bn5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_tanhk"]
-radius = 6.708204
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hu3fh"]
+size = Vector2(4, 13)
 
 [node name="cursor" type="Area2D" unique_id=392710476]
 collision_layer = 4
@@ -12,16 +12,28 @@ collision_mask = 2
 script = ExtResource("1_tanhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1509776596]
-position = Vector2(-1, -1)
+position = Vector2(-0.5000002, -1)
 rotation = 1.5707964
-shape = SubResource("CircleShape2D_tanhk")
+shape = SubResource("RectangleShape2D_hu3fh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1344491252]
+visible = false
 rotation = 2.0943952
 texture = ExtResource("1_v0bn5")
 
 [node name="TimerDie" type="Timer" parent="." unique_id=1473500975]
 wait_time = 3.0
+
+[node name="Label" type="Label" parent="." unique_id=1248800618]
+texture_filter = 1
+texture_repeat = 1
+offset_left = -7.0
+offset_top = -4.0
+offset_right = 6.0
+offset_bottom = 1.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
+text = "Print(42)"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="TimerDie" to="." method="_on_timer_die_timeout"]

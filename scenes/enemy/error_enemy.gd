@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var speed = 80 
+var speed = 45 
 var direction = Vector2.ZERO
 var player = null
 var health = 100
@@ -47,7 +47,7 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 	if body == player or body.is_in_group("enemies"):
 				
 		if body == player:
-			pushPower = 3
+			pushPower = 0.2
 			player.takeDamage(damage)
 		if not push:
 			if body.is_in_group("enemies"):

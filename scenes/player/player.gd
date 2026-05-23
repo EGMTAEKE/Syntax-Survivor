@@ -159,12 +159,13 @@ func apllyAbility(ability):
 func  apllyItem(item):
 	speed += item.itemSpeed
 	damageMultiplier += item.itemDamage
+	saveDamage = damageMultiplier
 	expMult += item.itemExp
 
 func takeRune(color):
 	$RunesTimer.start()
 	if color == Color.CRIMSON:
-		damageMultiplier = 1
+		damageMultiplier = 1000
 	elif color == Color.AQUA:
 		health = maxHealth
 	elif color == Color.GREEN_YELLOW:

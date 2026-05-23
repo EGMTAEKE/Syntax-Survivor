@@ -84,4 +84,5 @@ position = Vector2(130, 260)
 shape = SubResource("RectangleShape2D_e0arn")
 
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ButtonStart" to="CanvasLayer/CenterContainer/VBoxContainer/ButtonStart" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ButtonSettings" to="." method="_on_button_settings_pressed"]
 [connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ButtonExit" to="." method="_on_button_exit_pressed"]

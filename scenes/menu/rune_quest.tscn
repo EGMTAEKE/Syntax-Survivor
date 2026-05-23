@@ -10,8 +10,11 @@ process_mode = 3
 script = ExtResource("1_5qd6o")
 
 [node name="Panel" type="Panel" parent="." unique_id=2095195463]
-offset_right = 540.0
-offset_bottom = 959.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Text" type="Label" parent="Panel" unique_id=1960185079]
 layout_mode = 0
