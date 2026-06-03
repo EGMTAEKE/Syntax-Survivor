@@ -107,9 +107,9 @@ func takeExp(expValue):
 		experience = 0
 		maxExp = maxExp + 200
 		%experienceBar.max_value = maxExp 
-		maxHealth = maxHealth + 20
-		$ProgressBar.max_value = maxHealth
-		health = maxHealth
+		#maxHealth = maxHealth + 20
+		#$ProgressBar.max_value = maxHealth
+		#health = maxHealth
 		levelUpMenuOpen()
 		
 	%experienceBar.value = experience

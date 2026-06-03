@@ -17,12 +17,12 @@ func _ready() -> void:
 	for i in range(count):
 		var card  = $Panel/HBoxContainer.get_child(i)
 		var ability = abilities[i]
-		
+		card.get_node("icon").texture = ability.icon
 		card.get_node("NameLabel").text = ability.name
 		card.get_node("DescLabel").text = ability.description
 		
 		var button = card.get_node("SelectButton") 
-		button.pressed.connect(func():chooseAbility(ability))
+		button.released.connect(func():chooseAbility(ability))
 	
 	for i in range(count,3):
 		$Panel/HBoxContainer.get_child(i).visible = false

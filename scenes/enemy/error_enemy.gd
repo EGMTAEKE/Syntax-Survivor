@@ -27,6 +27,8 @@ func enemyMove():
 	direction = (player.global_position - global_position).normalized()
 	velocity = direction * speed
 
+func hitAnim():
+	$AnimationPlayer.play("takeDamageEnemy")
 	
 func returnToPool():
 	health = maxHealth
@@ -62,5 +64,12 @@ func _on_attack_area_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout() -> void:
+	speed = 0
+	$CollisionShape2D.disabled = true
+	$AttackArea.monitoring = false
+	
+	$AnimationPlayer.play("enemyDie")
+	await $AnimationPlayer.animation_finished
+	
 	enemy_pool.returnEnemy(self) # Replace with function body.
 	$Timer.stop()

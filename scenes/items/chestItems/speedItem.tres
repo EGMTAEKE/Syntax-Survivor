@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="itemChest" format=3 uid="uid://7the1fy62flf"]
 
 [ext_resource type="Script" uid="uid://dixeh0yd65pt6" path="res://scripts/chestItems.gd" id="1_bj4no"]
+[ext_resource type="Texture2D" uid="uid://dcresp02rngx2" path="res://sprites/cards/icon/itemCoffeeIcon.png" id="1_w04t5"]
 
 [resource]
 script = ExtResource("1_bj4no")
 id = "2"
+icon = ExtResource("1_w04t5")
 name = "Кофе"
 description = "Одобрено программистами, которые не спят уже двое суток. +60% к скорости"
 itemSpeed = 80.0

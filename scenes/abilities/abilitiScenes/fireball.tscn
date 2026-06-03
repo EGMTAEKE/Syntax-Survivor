@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ctvyiohc3g5qj"]
 
 [ext_resource type="Script" uid="uid://dy06ad1nsrxfl" path="res://scenes/abilities/abilitiScripts/fireball.gd" id="1_j5hb8"]
+[ext_resource type="Texture2D" uid="uid://bieegl2qgwv0j" path="res://sprites/spells/fireball.png" id="2_ls755"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r6im3"]
 
@@ -13,9 +14,12 @@ script = ExtResource("1_j5hb8")
 shape = SubResource("CircleShape2D_r6im3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1180071964]
-visible = false
+position = Vector2(-4.7683716e-07, 2.9802322e-07)
+scale = Vector2(1.3333334, 1.3333334)
+texture = ExtResource("2_ls755")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=1421414141]
+visible = false
 color = Color(1, 0.16862746, 0.09019608, 1)
 antialiased = true
 polygon = PackedVector2Array(-10, 0, -10, -3, -8, -7, -4, -9, 0, -10, 4, -9, 7, -7, 9, -4, 10, 0, 9, 4, 7, 7, 4, 9, 0, 10, -4, 10, -8, 7, -10, 4)

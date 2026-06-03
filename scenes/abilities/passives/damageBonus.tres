@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="Ability" format=3 uid="uid://cdxv5usyxs7pr"]
 
 [ext_resource type="Script" uid="uid://dxtgqnqeev48n" path="res://scripts/ability.gd" id="1_feyxm"]
+[ext_resource type="Texture2D" uid="uid://s2w1lir6am7d" path="res://sprites/cards/icon/damageAbilityIcon.png" id="1_vkt1p"]
 
 [resource]
 script = ExtResource("1_feyxm")
 id = "damageBonus"
+icon = ExtResource("1_vkt1p")
 name = "Урон"
 damageBonus = 0.2
 lastLevel = 5

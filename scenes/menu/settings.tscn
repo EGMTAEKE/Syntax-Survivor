@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b5db7b1c0yj22" path="res://scenes/menu/settings.gd" id="1_dxr1k"]
 [ext_resource type="Script" uid="uid://sb21xsrfc3df" path="res://scenes/menu/line_edit.gd" id="2_0t5g5"]
-[ext_resource type="Texture2D" uid="uid://bgoggvkcp3boy" path="res://scenes/menu/okbutton.png" id="2_37860"]
+[ext_resource type="Texture2D" uid="uid://d0p1dtqlwtxxv" path="res://sprites/buttons/settingsButton.png" id="4_0t5g5"]
+[ext_resource type="Texture2D" uid="uid://c170c4uou1n7r" path="res://sprites/buttons/positiveActionOneGrey.png" id="4_v208e"]
+[ext_resource type="Texture2D" uid="uid://bppregw4fmnqg" path="res://sprites/buttons/positiveActionOneGreen.png" id="5_t35ha"]
 
 [node name="settings" type="Control" unique_id=484958178]
 layout_mode = 3
@@ -31,10 +33,11 @@ grow_vertical = 2
 theme_override_constants/margin_left = 180
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 180
+theme_override_constants/margin_bottom = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=1202249863]
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 58
 
 [node name="NameMenu" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1255456402]
 layout_mode = 2
@@ -49,8 +52,10 @@ text = "Звук"
 horizontal_alignment = 1
 
 [node name="soundButton" type="TouchScreenButton" parent="CanvasLayer/MarginContainer/VBoxContainer/sound" unique_id=1211688911]
-position = Vector2(82, 34)
-texture_normal = ExtResource("2_37860")
+position = Vector2(34, 40)
+scale = Vector2(3.045, 2.5882351)
+texture_normal = ExtResource("4_v208e")
+texture_pressed = ExtResource("5_t35ha")
 
 [node name="language" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1391047064]
 layout_mode = 2
@@ -59,8 +64,10 @@ text = "Язык"
 horizontal_alignment = 1
 
 [node name="languageButton" type="TouchScreenButton" parent="CanvasLayer/MarginContainer/VBoxContainer/language" unique_id=1033641441]
-position = Vector2(82, 34)
-texture_normal = ExtResource("2_37860")
+position = Vector2(34, 37)
+scale = Vector2(3, 2.588235)
+texture_normal = ExtResource("4_v208e")
+texture_pressed = ExtResource("5_t35ha")
 
 [node name="size" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1493165796]
 layout_mode = 2
@@ -69,26 +76,41 @@ text = "Размер джойстика"
 horizontal_alignment = 1
 
 [node name="sizeButton" type="TouchScreenButton" parent="CanvasLayer/MarginContainer/VBoxContainer/size" unique_id=1915164192]
-position = Vector2(82, 34)
-texture_normal = ExtResource("2_37860")
+position = Vector2(34, 44)
+scale = Vector2(3, 2.5882363)
+texture_normal = ExtResource("4_v208e")
+texture_pressed = ExtResource("5_t35ha")
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer" unique_id=868234595]
-offset_left = 41.0
-offset_top = 373.0
-offset_right = 109.5
-offset_bottom = 404.0
+offset_left = 147.0
+offset_top = 491.0
+offset_right = 396.0
+offset_bottom = 528.0
 script = ExtResource("2_0t5g5")
 
-[node name="saveButton" type="TouchScreenButton" parent="CanvasLayer/LineEdit" unique_id=405051529]
-modulate = Color(14.983368, 0, 0, 1)
-position = Vector2(0, 41)
-scale = Vector2(4.3124995, 3.5)
-texture_normal = ExtResource("2_37860")
+[node name="Label" type="Label" parent="CanvasLayer/LineEdit" unique_id=1623816461]
+z_index = 1
+layout_mode = 0
+offset_left = 68.0
+offset_top = 53.0
+offset_right = 188.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 22
+text = "Сохранить"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="editButton" type="TouchScreenButton" parent="CanvasLayer/LineEdit" unique_id=872638206]
-position = Vector2(77, 0)
-scale = Vector2(2.75, 1.75)
-texture_normal = ExtResource("2_37860")
+position = Vector2(255, -14)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("4_0t5g5")
 
-[connection signal="pressed" from="CanvasLayer/LineEdit/saveButton" to="." method="_on_touch_screen_button_pressed"]
+[node name="saveButton" type="TouchScreenButton" parent="CanvasLayer/LineEdit" unique_id=405051529]
+position = Vector2(42, 45)
+scale = Vector2(3.5306122, 2.8235295)
+texture_normal = ExtResource("4_v208e")
+texture_pressed = ExtResource("5_t35ha")
+
 [connection signal="pressed" from="CanvasLayer/LineEdit/editButton" to="CanvasLayer/LineEdit" method="_on_edit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/LineEdit/saveButton" to="." method="_on_touch_screen_button_pressed"]
+[connection signal="released" from="CanvasLayer/LineEdit/saveButton" to="." method="_on_save_button_released"]

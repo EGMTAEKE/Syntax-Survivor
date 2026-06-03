@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cd7ujk6metbs8"]
 
 [ext_resource type="Script" uid="uid://cpi7sdljbwg6r" path="res://scenes/items/rune.gd" id="1_l6pgx"]
+[ext_resource type="Texture2D" uid="uid://cwnfheyymvo3e" path="res://sprites/runeKnowledge.png" id="2_txksg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hwkxg"]
 radius = 9.0
@@ -13,7 +14,12 @@ script = ExtResource("1_l6pgx")
 shape = SubResource("CircleShape2D_hwkxg")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=36087792]
+visible = false
 color = Color(0, 1, 0, 1)
 polygon = PackedVector2Array(10, 0, 0, -16, -10, 0, 0, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1841220447]
+position = Vector2(0, -15.425)
+texture = ExtResource("2_txksg")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

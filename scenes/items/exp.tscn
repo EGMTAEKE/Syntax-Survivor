@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bj3y2f7u7bqaf"]
 
 [ext_resource type="Script" uid="uid://ca3vsddoxsu6x" path="res://scenes/items/exp.gd" id="1_a0jcl"]
+[ext_resource type="Texture2D" uid="uid://bkmb7j6ctllbu" path="res://sprites/exp.png" id="2_26yg1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cmqa6"]
 radius = 3.1622777
@@ -13,9 +14,13 @@ script = ExtResource("1_a0jcl")
 shape = SubResource("CircleShape2D_cmqa6")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=606086014]
+visible = false
 scale = Vector2(0.325, 0.325)
 color = Color(0.21176471, 1, 1, 1)
 antialiased = true
 polygon = PackedVector2Array(-9, 5, -10, 0, -9, -5, -5, -9, 0, -10, 5, -9, 9, -5, 10, 0, 9, 5, 5, 9, 0, 10, -5, 9)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=610005116]
+texture = ExtResource("2_26yg1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://chwf13nf0lo42" path="res://scenes/level/Tip Texture.png" id="5_vpf64"]
 [ext_resource type="PackedScene" uid="uid://iunc52ys8rji" path="res://scenes/enemy/error_enemy.tscn" id="6_vpf64"]
 [ext_resource type="Script" uid="uid://cil3tnrcyg7ej" path="res://scenes/level/pool_enemy.gd" id="7_sytrn"]
+[ext_resource type="Texture2D" uid="uid://dm6pe0de6jgn7" path="res://sprites/buttons/pauseButton.png" id="7_tf2q7"]
 [ext_resource type="Script" uid="uid://c0tsxyp0gdtey" path="res://scenes/level/wave.gd" id="9_tf2q7"]
 
 [node name="level" type="Node2D" unique_id=1541133224]
@@ -55,6 +56,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TimerLive" type="Timer" parent="CanvasLayer/TimeLive" unique_id=969970865]
+
+[node name="ButtonPause" type="TouchScreenButton" parent="CanvasLayer" unique_id=1325069228]
+process_mode = 3
+modulate = Color(1, 1, 1, 0.70000005)
+position = Vector2(470, 14)
+scale = Vector2(2, 2)
+texture_normal = ExtResource("7_tf2q7")
 
 [node name="poolEnemy" type="Node2D" parent="." unique_id=1765139882]
 script = ExtResource("7_sytrn")
@@ -169,12 +177,16 @@ wait_time = 5.0
 wait_time = 100.0
 
 [node name="spawnRune" type="Timer" parent="." unique_id=1694290641]
+wait_time = 120.0
+one_shot = true
 autostart = true
 
 [node name="spawnChest" type="Timer" parent="." unique_id=1452300032]
 wait_time = 150.0
+one_shot = true
 autostart = true
 
+[connection signal="released" from="CanvasLayer/ButtonPause" to="." method="_on_button_pause_released"]
 [connection signal="timeout" from="wave/Timer" to="wave" method="_on_timer_timeout"]
 [connection signal="timeout" from="wave/damageSpeed" to="wave" method="_on_damage_speed_timeout"]
 [connection signal="timeout" from="spawnRune" to="." method="_on_spawn_rune_timeout"]

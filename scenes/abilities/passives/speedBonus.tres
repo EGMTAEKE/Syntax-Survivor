@@ -1,11 +1,13 @@
 [gd_resource type="Resource" script_class="Ability" format=3 uid="uid://c3kaexgrxty8u"]
 
 [ext_resource type="Script" uid="uid://dxtgqnqeev48n" path="res://scripts/ability.gd" id="1_7q65i"]
+[ext_resource type="Texture2D" uid="uid://bvij8fbd43dqh" path="res://sprites/cards/icon/speedFireUpIcon.png" id="1_ims4h"]
 
 [resource]
 script = ExtResource("1_7q65i")
 id = "speedBonus"
-name = "Скорострельность"
+icon = ExtResource("1_ims4h")
+name = "Скорость Стрельбы"
 speedBonus = 0.2
 lastLevel = 5
 metadata/_custom_type_script = "uid://dxtgqnqeev48n"

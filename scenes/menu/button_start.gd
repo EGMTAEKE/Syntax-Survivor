@@ -11,6 +11,12 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_pressed() -> void:
+#func _on_pressed() -> void:
+	#print("Кнопка нажата")
+	#get_tree().change_scene_to_file("res://scenes/level/level.tscn")
+
+
+func _on_released() -> void:
 	print("Кнопка нажата")
+	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://scenes/level/level.tscn")

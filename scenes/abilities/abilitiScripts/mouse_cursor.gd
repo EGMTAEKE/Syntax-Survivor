@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemies"):
 		body.health -= damage
+		body.hitAnim()
 	if body.health <= 0:
 		body.returnToPool()
 

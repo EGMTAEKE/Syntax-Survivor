@@ -11,9 +11,20 @@ func _process(_delta: float) -> void:
 	pass
 
 
-func _on_button_exit_pressed() -> void:
-	get_tree().quit() # Replace with function body.
+#func _on_button_exit_pressed() -> void:
+	#get_tree().quit() # Replace with function body.
 
 
-func _on_button_settings_pressed() -> void:
+#func _on_button_settings_pressed() -> void:
+	#get_tree().change_scene_to_file("res://scenes/menu/settings.tscn")
+
+
+func _on_button_settings_released() -> void:
+	await get_tree().create_timer(0.2).timeout
 	get_tree().change_scene_to_file("res://scenes/menu/settings.tscn")
+
+
+
+func _on_button_exit_released() -> void:
+	await get_tree().create_timer(0.2).timeout
+	get_tree().quit()

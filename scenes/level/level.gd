@@ -40,3 +40,7 @@ func _on_spawn_chest_timeout() -> void:
 	print("cундук")
 	if global.items.size() == 0:
 		$spawnChest.stop()
+
+
+func _on_button_pause_released() -> void:
+	get_tree().paused = !get_tree().paused

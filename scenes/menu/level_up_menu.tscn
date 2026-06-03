@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://gbqmiidiu5yj"]
 
 [ext_resource type="Script" uid="uid://b0b1su1b45dnp" path="res://scenes/menu/level_up_menu.gd" id="1_5dng8"]
+[ext_resource type="Texture2D" uid="uid://8yc1wh8g6eia" path="res://sprites/cards/background/abilityCard.png" id="2_wlan6"]
+[ext_resource type="Texture2D" uid="uid://c170c4uou1n7r" path="res://sprites/buttons/positiveActionOneGrey.png" id="3_re6en"]
+[ext_resource type="Texture2D" uid="uid://bppregw4fmnqg" path="res://sprites/buttons/positiveActionOneGreen.png" id="4_re6en"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v1dgh"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wlan6"]
-size = Vector2(160, 60)
 
 [node name="LevelUpMenu" type="CanvasLayer" unique_id=654798882]
 process_mode = 3
@@ -26,16 +27,18 @@ mouse_filter = 2
 color = Color(1, 1, 1, 0.34901962)
 
 [node name="Panel" type="Panel" parent="." unique_id=659198062]
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 957.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="Panel" unique_id=1703876613]
 layout_mode = 0
+offset_top = 30.0
 offset_right = 540.0
-offset_bottom = 62.0
+offset_bottom = 92.0
 text = "Повышение уровня"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -63,14 +66,25 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1dgh")
 
+[node name="card" type="TextureRect" parent="Panel/HBoxContainer/card1/Panel" unique_id=673679376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wlan6")
+
 [node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card1" unique_id=535113394]
 layout_mode = 0
+offset_left = 10.0
 offset_top = 20.0
-offset_right = 170.0
+offset_right = 157.0
 offset_bottom = 50.0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 17
 text = "NameLabel"
 horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card1" unique_id=103346346]
 layout_mode = 0
@@ -83,23 +97,41 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card1" unique_id=715409929]
-position = Vector2(85, 230)
-shape = SubResource("RectangleShape2D_wlan6")
+position = Vector2(26.000004, 207)
+scale = Vector2(2.4489796, 2.3529413)
+texture_normal = ExtResource("3_re6en")
+texture_pressed = ExtResource("4_re6en")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/card1/SelectButton" unique_id=2044898344]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
+[node name="Label" type="Label" parent="Panel/HBoxContainer/card1" unique_id=2044898344]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -66.0
+offset_right = 37.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
 text = "Выбрать"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="card2" type="Control" parent="Panel/HBoxContainer" unique_id=1217905906]
+[node name="icon" type="TextureRect" parent="Panel/HBoxContainer/card1" unique_id=1787029180]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -153.0
+offset_right = 159.0
+offset_bottom = -3.0
+
+[node name="card2" type="Control" parent="Panel/HBoxContainer" unique_id=217298845]
 custom_minimum_size = Vector2(170, 280)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card2" unique_id=860682124]
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card2" unique_id=574748966]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -109,16 +141,27 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1dgh")
 
-[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=1406953519]
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/card2/Panel" unique_id=1275672315]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wlan6")
+
+[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=543805228]
 layout_mode = 0
+offset_left = 11.0
 offset_top = 20.0
-offset_right = 170.0
+offset_right = 158.0
 offset_bottom = 50.0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 17
 text = "NameLabel"
 horizontal_alignment = 1
+autowrap_mode = 3
 
-[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=1993385783]
+[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card2" unique_id=340392184]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 60.0
@@ -128,24 +171,42 @@ text = "DescLabel"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card2" unique_id=1212046264]
-position = Vector2(85, 230)
-shape = SubResource("RectangleShape2D_wlan6")
+[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card2" unique_id=798499671]
+position = Vector2(26.000004, 207)
+scale = Vector2(2.4489796, 2.3529413)
+texture_normal = ExtResource("3_re6en")
+texture_pressed = ExtResource("4_re6en")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/card2/SelectButton" unique_id=235577499]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
+[node name="Label" type="Label" parent="Panel/HBoxContainer/card2" unique_id=96962919]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -66.0
+offset_right = 37.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
 text = "Выбрать"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="card3" type="Control" parent="Panel/HBoxContainer" unique_id=976426375]
+[node name="icon" type="TextureRect" parent="Panel/HBoxContainer/card2" unique_id=639713403]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -153.0
+offset_right = 159.0
+offset_bottom = -3.0
+
+[node name="card3" type="Control" parent="Panel/HBoxContainer" unique_id=1011123237]
 custom_minimum_size = Vector2(170, 280)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card3" unique_id=2071312344]
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/card3" unique_id=791680271]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -155,16 +216,27 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_v1dgh")
 
-[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=461559571]
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/card3/Panel" unique_id=1543675558]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wlan6")
+
+[node name="NameLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=1714552277]
 layout_mode = 0
+offset_left = 11.0
 offset_top = 20.0
-offset_right = 170.0
+offset_right = 159.0
 offset_bottom = 50.0
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 17
 text = "NameLabel"
 horizontal_alignment = 1
+autowrap_mode = 3
 
-[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=1408804319]
+[node name="DescLabel" type="Label" parent="Panel/HBoxContainer/card3" unique_id=1205509533]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 60.0
@@ -174,15 +246,37 @@ text = "DescLabel"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card3" unique_id=66352490]
-position = Vector2(85, 230)
-shape = SubResource("RectangleShape2D_wlan6")
+[node name="SelectButton" type="TouchScreenButton" parent="Panel/HBoxContainer/card3" unique_id=863531321]
+position = Vector2(26.000004, 207)
+scale = Vector2(2.4489796, 2.3529413)
+texture_normal = ExtResource("3_re6en")
+texture_pressed = ExtResource("4_re6en")
 
-[node name="Label" type="Label" parent="Panel/HBoxContainer/card3/SelectButton" unique_id=1604653706]
-offset_left = -80.0
-offset_top = -30.0
-offset_right = 80.0
-offset_bottom = 30.0
+[node name="Label" type="Label" parent="Panel/HBoxContainer/card3" unique_id=11918200]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -66.0
+offset_right = 37.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 16
 text = "Выбрать"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="icon" type="TextureRect" parent="Panel/HBoxContainer/card3" unique_id=1288601950]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -153.0
+offset_right = 159.0
+offset_bottom = -3.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=483867474]
+offset_right = 40.0
+offset_bottom = 40.0

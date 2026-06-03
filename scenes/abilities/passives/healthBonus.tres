@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="Ability" format=3 uid="uid://ct7yvvbvhsnur"]
 
 [ext_resource type="Script" uid="uid://dxtgqnqeev48n" path="res://scripts/ability.gd" id="1_1f51p"]
+[ext_resource type="Texture2D" uid="uid://ckcgdicuq0vvt" path="res://sprites/cards/icon/survivabilityIcon.png" id="1_koui6"]
 
 [resource]
 script = ExtResource("1_1f51p")
 id = "healthBonus"
+icon = ExtResource("1_koui6")
 name = "Выживаемость"
 healthBonus = 100
 lastLevel = 5

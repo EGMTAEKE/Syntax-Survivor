@@ -2,6 +2,7 @@ extends Resource
 class_name Ability
 
 @export var id: String = ""
+@export var icon: Texture2D
 @export var name: String = ""
 @export var description: String = ""
 @export var damageBonus: float = 0
